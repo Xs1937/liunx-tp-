@@ -1,0 +1,41 @@
+mysql  -uroot -p
+show databases;
+use mysql;
+show tables;
+update user set Host='%' where Host='localhost';
+service mysql restart
+service mysql restart
+tp
+
+server
+    {
+        listen 80;
+        #listen [::]:80;
+        server_name www.admin.weitengchina.com y;
+        index index.html index.htm index.php default.html default.htm default.php;
+        root  /home/admin/;
+
+        include y.conf;
+        #error_page   404   /404.html;
+        include enable-php.conf;
+ if (!-e $request_filename){
+        rewrite  ^(.*)$  /index.php?s=$1  last;
+         break;
+        }
+        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+        {
+            expires      30d;
+        }
+
+        location ~ .*\.(js|css)?$
+        {
+            expires      12h;
+        }
+
+        location ~ /\.
+        {
+            deny all;
+        }
+
+        access_log  /home/wwwlogs/y.log;
+    }
