@@ -11,9 +11,9 @@ server
     {
         listen 80;
         #listen [::]:80;
-        server_name www.admin.weitengchina.com y;
+        server_name your domain;
         index index.html index.htm index.php default.html default.htm default.php;
-        root  /home/admin/;
+        root  项目目录;
 
         include y.conf;
         #error_page   404   /404.html;
